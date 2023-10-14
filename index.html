@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Tip calculator app</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./main.js" defer></script>
+
+</head>
+<body>
+<main class="container">
+   <img class="logo-desktop" src="./assets/images/logo.svg" alt="Logo pic">
+   <div class="input-container">
+      <div class="bill-wrapper">
+         <label>
+            <h1>Bill</h1>
+         </label>
+         <input type="number" id="bill" class="primary-input bill-input" placeholder="0">
+      </div>
+      <div class="tip-wrapper">
+         <label>
+            <h1>Select Tip %</h1>
+         </label>
+         <div class="tip-grid">
+            <button class="tip-btn" id="tip-5">5%</button>
+            <button class="tip-btn" id="tip-10">10%</button>
+            <button class="tip-btn" id="tip-15">15%</button>
+            <button class="tip-btn" id="tip-25">25%</button>
+            <button class="tip-btn" id="tip-50">50%</button>
+            <input type="text" id="custom-tip" class="primary-input custom-input" placeholder="Custom"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+         </div>
+      </div>
+      <div class="split-wrapper">
+         <label>
+            <h1>Number of People</h1>
+            <p class="error-message">Can’t be zero</p>
+         </label>
+         <input type="text" id="number-input" class="primary-input number-input" placeholder="0"
+         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+      </div>
+   </div>
+
+   <div class="result-container">
+      <div class="result-wrapper">
+         <div class="output-wrapper">
+            <div class="desc-wrapper">
+               <h1>Tip Amount</h1>
+               <p>/ person</p>
+            </div>
+            <span id="tip-amount">$0.00</span>
+         </div>
+         <div class="output-wrapper">
+            <div class="desc-wrapper">
+               <h1>Total</h1>
+               <p>/ person</p>
+            </div>
+            <span id="total-amount">$0.00</span>
+         </div>
+      </div>
+      <button class="reset-btn">Reset</button>
+   </div>
+</main>
+</body>
+</html>
